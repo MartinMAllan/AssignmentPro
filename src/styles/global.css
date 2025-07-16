@@ -1,0 +1,146 @@
+/* src/styles/global.css */
+
+/* Font Import (matches WriterPro's typography) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Base Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.5;
+  background-color: #FFFFFF;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 500;
+  color: #000000;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/* Color Variables (aligned with WriterPro accents) */
+:root {
+  --teal-light: #E0F7FA; /* Header background */
+  --purple-accent: #9C27B0; /* Titles and values */
+  --blue-primary: #2196F3; /* Active states, badges */
+  --red-urgent: #F44336; /* Overdue indicators */
+  --gray-secondary: #757575; /* Subtitles */
+  --white: #FFFFFF; /* Backgrounds */
+  --border-gray: #E0E0E0; /* Borders */
+}
+
+/* Common Components */
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+}
+
+.badge-blue {
+  background-color: var(--blue-primary);
+  color: var(--white);
+}
+
+.badge-red {
+  background-color: var(--red-urgent);
+  color: var(--white);
+}
+
+/* Layout Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+/* Responsive Design (basic media query for mobile) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Additional WriterPro Alignments */
+a {
+  text-decoration: none;
+  color: var(--blue-primary);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--purple-accent);
+}
+
+input[type="search"] {
+  border: 1px solid var(--border-gray);
+  border-radius: 4px;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="search"]:focus {
+  border-color: var(--blue-primary);
+}
